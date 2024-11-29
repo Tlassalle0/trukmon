@@ -7,15 +7,16 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
-        <DataTemplate x:Key="SpellTemplate">
+        <DataTemplate x:Key="Spell">
             <StackPanel>
-                <TextBlock Text="{Binding Name}"/>
-                <TextBlock Text="{Binding Damage}"/>
-                <TextBlock Text="{Binding Description}"/>
+                <TextBlock Text="{Binding Name}" FontWeight="Bold" FontSize="14" />
+                <TextBlock Text="{Binding Description}" />
+                <TextBlock Text="{Binding Damage}" />
             </StackPanel>
         </DataTemplate>
     </UserControl.Resources>
     <Grid>
-        <ListBox ItemsSource="{Binding Spells}" ItemTemplate="{StaticResource SpellTemplate}"/>
+        <ListBox ItemsSource="{Binding Spells}" ItemTemplate="{StaticResource Spell}">
+        </ListBox>
     </Grid>
 </UserControl>

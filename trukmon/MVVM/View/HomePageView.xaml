@@ -17,6 +17,9 @@
             <TabItem Header="Monsters">
                 <local:MonsterInfoPage/>
             </TabItem>
+            <TabItem Header="Start Run">
+                <local:CombatPage/>
+            </TabItem>
         </TabControl>
     </StackPanel>
 </UserControl>

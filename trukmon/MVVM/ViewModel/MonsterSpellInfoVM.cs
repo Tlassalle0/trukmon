@@ -9,6 +9,7 @@ namespace trukmon.MVVM.ViewModel
     public class MonsterSpellInfoVM
     {
         public string MonsterName { get; set; }
+        public string Health { get; set; }
         public List<string> Moves { get; set; } = new List<string>();
     }
 }

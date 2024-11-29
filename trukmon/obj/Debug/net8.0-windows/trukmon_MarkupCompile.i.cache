@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\IdeaPad\source\repos\trukmon\trukmon\App.xaml
-5-1691394068
+9-1664722611
 
-24-310049185
+311043172448
 229952089308
-MainWindow.xaml;MVVM\View\HomePageView.xaml;MVVM\View\LoginView.xaml;MVVM\View\MonsterInfoPage.xaml;MVVM\View\SpellInfoPage.xaml;
+MainWindow.xaml;MVVM\View\CombatPage.xaml;MVVM\View\FightPage.xaml;MVVM\View\HomePageView.xaml;MVVM\View\LoginView.xaml;MVVM\View\MonsterInfoPage.xaml;MVVM\View\RunPage.xaml;MVVM\View\SelectPage.xaml;MVVM\View\SpellInfoPage.xaml;
 
-True
+False
 

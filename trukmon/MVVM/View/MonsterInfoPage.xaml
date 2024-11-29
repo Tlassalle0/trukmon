@@ -9,7 +9,7 @@
     <UserControl.Resources>
         <DataTemplate x:Key="MonsterTemplate">
             <StackPanel>
-                <TextBlock Text="{Binding Name}"/>
+                <TextBlock Text="{Binding MonsterName}" FontSize="18" FontWeight="Bold"/>
                 <TextBlock Text="{Binding Health}"/>
                 <ItemsControl ItemsSource="{Binding Moves}">
                     <ItemsControl.ItemTemplate>
@@ -28,22 +28,8 @@
         </Grid.RowDefinitions>
 
         <!-- List of Monsters -->
-        <TextBlock Text="{Binding Test}"/>
-        <ListBox Grid.Row="1" ItemsSource="{Binding Monsters}">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel>
-                        <TextBlock Text="{Binding MonsterName}" FontWeight="Bold" FontSize="14" />
-                        <ItemsControl ItemsSource="{Binding Moves}">
-                            <ItemsControl.ItemTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding}" />
-                                </DataTemplate>
-                            </ItemsControl.ItemTemplate>
-                        </ItemsControl>
-                    </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
+        <ListBox Grid.Row="1" ItemsSource="{Binding Monsters}" ItemTemplate="{StaticResource MonsterTemplate}">
+            
         </ListBox>
     </Grid>
 </UserControl>

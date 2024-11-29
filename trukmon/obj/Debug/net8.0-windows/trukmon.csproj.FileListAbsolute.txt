@@ -154,3 +154,8 @@ C:\Users\IdeaPad\source\repos\trukmon\trukmon\obj\Debug\net8.0-windows\MVVM\View
 C:\Users\IdeaPad\source\repos\trukmon\trukmon\obj\Debug\net8.0-windows\MVVM\View\SpellInfoPage.g.cs
 C:\Users\IdeaPad\source\repos\trukmon\trukmon\obj\Debug\net8.0-windows\MVVM\View\MonsterInfoPage.baml
 C:\Users\IdeaPad\source\repos\trukmon\trukmon\obj\Debug\net8.0-windows\MVVM\View\SpellInfoPage.baml
+C:\Users\IdeaPad\source\repos\trukmon\trukmon\obj\Debug\net8.0-windows\trukmon.sourcelink.json
+C:\Users\IdeaPad\source\repos\trukmon\trukmon\obj\Debug\net8.0-windows\MVVM\View\CombatPage.g.cs
+C:\Users\IdeaPad\source\repos\trukmon\trukmon\obj\Debug\net8.0-windows\MVVM\View\CombatPage.baml
+C:\Users\IdeaPad\source\repos\trukmon\trukmon\obj\Debug\net8.0-windows\MVVM\View\RunPage.g.cs
+C:\Users\IdeaPad\source\repos\trukmon\trukmon\obj\Debug\net8.0-windows\MVVM\View\RunPage.baml

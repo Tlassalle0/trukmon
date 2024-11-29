@@ -12,7 +12,6 @@ using CommunityToolkit.Mvvm.Input;
 using Microsoft.EntityFrameworkCore;
 using trukmon.Data;
 using trukmon.Model;
-using WpfCours.MVVM.ViewModel;
 
 namespace trukmon.MVVM.ViewModel
 {

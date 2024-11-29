@@ -15,6 +15,9 @@
         <DataTemplate DataType="{x:Type VM:HomePageVM}">
             <View:HomePageView/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type VM:RunPageVM}">
+            <View:RunPage/>
+        </DataTemplate>
     </Window.Resources>
     <Grid>
         <ContentControl Content="{Binding CurrentVM}"/>

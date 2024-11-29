@@ -43,6 +43,7 @@ namespace trukmon.MVVM.View
                     .Select(monster => new MonsterSpellInfoVM
                     {
                         MonsterName = monster.Name,
+                        Health = monster.Health.ToString(),
                         Moves = monster.Spells.Select(spell => spell.Name).Take(4).ToList() // Limit to 4 moves
                     }).ToList()
             );

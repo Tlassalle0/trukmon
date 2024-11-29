@@ -9,7 +9,7 @@ using System.Windows;
 using System.Windows.Input;
 using trukmon.MVVM.ViewModel;
 
-namespace WpfCours.MVVM.ViewModel
+namespace trukmon.MVVM.ViewModel
 {
     public class MainWindowVM : BaseVM
     {
