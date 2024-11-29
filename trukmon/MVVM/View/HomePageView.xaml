@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="trukmon.MVVM.View.HomePageView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:trukmon.MVVM.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel Orientation="Horizontal">
+        <Border Background="Gray" Width="100" >
+            <TextBlock Text="{Binding HomeText}" FontSize="30"/>
+        </Border>
+        <TabControl>
+            <TabItem Header="Spells">
+                <local:SpellInfoPage/>
+            </TabItem>
+            <TabItem Header="Monsters">
+                <local:MonsterInfoPage/>
+            </TabItem>
+        </TabControl>
+    </StackPanel>
+</UserControl>
