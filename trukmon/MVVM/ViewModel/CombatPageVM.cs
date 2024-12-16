@@ -8,20 +8,34 @@ using trukmon.Model;
 
 namespace trukmon.MVVM.ViewModel
 {
-    class CombatPageVM
+    class CombatPageVM : BaseVM
     {
         public bool InFight = false;
         public List<Monster> monsters { get; set; }
-        public List<Monster> starters { get; set; }
 
-        ExerciceMonsterContext _dataContext;
+        public List<Spell> spells { get; set; }
+
+        private Monster currentMonster;
+        private List<Spell> currentMonsterSpells;
+
+        ExerciceMonsterContext db;
+
 
         public CombatPageVM()
         {
-            _dataContext = new ExerciceMonsterContext();
-            monsters = _dataContext.Monsters.ToList();
-            starters = _dataContext.Monsters.Where(m=>m.Name=="Tartue" || m.Name=="Papaela").ToList();
-
+            db = new ExerciceMonsterContext();
+            monsters=db.Monsters.ToList();
+            spells = db.Spells.ToList();
         }
+
+        public CombatPageVM(int idMonster)
+        {
+            db = new ExerciceMonsterContext();
+            monsters = db.Monsters.ToList();
+            spells = db.Spells.ToList();
+            currentMonster = db.Monsters.Find(idMonster);
+            currentMonsterSpells = currentMonster.Spells.ToList();
+        }
+
     }
 }

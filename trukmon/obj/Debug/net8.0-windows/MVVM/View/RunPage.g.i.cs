@@ -53,7 +53,7 @@ namespace trukmon.MVVM.View {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/trukmon;V1.0.0.0;component/mvvm/view/runpage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/trukmon;component/mvvm/view/runpage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\MVVM\View\RunPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

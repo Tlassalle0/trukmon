@@ -10,9 +10,6 @@
     <Compile Update="MVVM\View\CombatPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="MVVM\View\FightPage.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="MVVM\View\HomePageView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -20,9 +17,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="MVVM\View\MonsterInfoPage.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="MVVM\View\RunPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="MVVM\View\SelectPage.xaml.cs">
@@ -39,9 +33,6 @@
     <Page Update="MVVM\View\CombatPage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MVVM\View\FightPage.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="MVVM\View\HomePageView.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -49,9 +40,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MVVM\View\MonsterInfoPage.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="MVVM\View\RunPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MVVM\View\SelectPage.xaml">

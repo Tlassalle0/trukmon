@@ -22,16 +22,16 @@ namespace trukmon.MVVM.View
     /// </summary>
     public partial class CombatPage : UserControl
     {
-        public ICommand StartRun { get; set; }
+        public ICommand StopRun { get; set; }
         public CombatPage()
         {
             InitializeComponent();
-            StartRun = new RelayCommand(Start);
+            StopRun = new RelayCommand(Stop);
             DataContext = this;
         }
-        public void Start()
+        public void Stop()
         {
-            MainWindowVM.OnRequestVMChange(new RunPageVM());
+            MainWindowVM.OnRequestVMChange(new SelectPageVM());
         }
     }
 }

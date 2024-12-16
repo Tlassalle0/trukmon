@@ -15,8 +15,8 @@
         <DataTemplate DataType="{x:Type VM:HomePageVM}">
             <View:HomePageView/>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type VM:RunPageVM}">
-            <View:RunPage/>
+        <DataTemplate DataType="{x:Type VM:SelectPageVM}">
+            <View:SelectPage/>
         </DataTemplate>
     </Window.Resources>
     <Grid>
