@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Windows;
 using Microsoft.EntityFrameworkCore;
 
 namespace trukmon.Model;
@@ -25,7 +27,25 @@ public partial class ExerciceMonsterContext : DbContext
 
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer($"Server=PETITBORDI\\SQLEXPRESS;Database=ExerciceMonster;Trusted_Connection=True;TrustServerCertificate=True;");
+    {
+        // Path to the TXT file containing the server name
+        string serverNameFile = "../../../DB.txt";
+
+        // Default to a hardcoded server if the file doesn't exist or is empty
+        string serverName = "TIBORDINATEUR\\SQLEXPRESS";
+
+        if (File.Exists(serverNameFile))
+        {
+            string fileContent = File.ReadAllText(serverNameFile)?.Trim();
+            if (!string.IsNullOrEmpty(fileContent))
+            {
+                serverName = fileContent;
+            }
+        }
+
+        string connectionString = $"Server={serverName};Database=ExerciceMonster;Trusted_Connection=True;TrustServerCertificate=True;";
+        optionsBuilder.UseSqlServer(connectionString);
+    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

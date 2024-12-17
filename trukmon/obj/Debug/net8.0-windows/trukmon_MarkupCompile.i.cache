@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\IdeaPad\source\repos\trukmon\trukmon\obj\Debug\net8.0-windows\
+C:\Users\Lassalle\source\repos\trukmon\trukmon\obj\Debug\net8.0-windows\
 trukmon
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-C:\Users\IdeaPad\source\repos\trukmon\trukmon\App.xaml
-7-1523217103
+C:\Users\Lassalle\source\repos\trukmon\trukmon\App.xaml
+7-1321208311
 
-261457497258
-229952089308
-MainWindow.xaml;MVVM\View\CombatPage.xaml;MVVM\View\HomePageView.xaml;MVVM\View\LoginView.xaml;MVVM\View\MonsterInfoPage.xaml;MVVM\View\SelectPage.xaml;MVVM\View\SpellInfoPage.xaml;
+279809671
+229-748513164
+MainWindow.xaml;MVVM\View\FightPage.xaml;MVVM\View\HomePageView.xaml;MVVM\View\LoginView.xaml;MVVM\View\MonsterInfoPage.xaml;MVVM\View\SelectPage.xaml;MVVM\View\SpellInfoPage.xaml;
 
 True
 

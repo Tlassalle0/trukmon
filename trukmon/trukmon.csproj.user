@@ -7,7 +7,7 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="MVVM\View\CombatPage.xaml.cs">
+    <Compile Update="MVVM\View\FightPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="MVVM\View\HomePageView.xaml.cs">
@@ -30,7 +30,7 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MVVM\View\CombatPage.xaml">
+    <Page Update="MVVM\View\FightPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MVVM\View\HomePageView.xaml">

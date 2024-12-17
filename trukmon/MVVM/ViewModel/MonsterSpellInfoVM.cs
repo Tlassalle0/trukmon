@@ -10,6 +10,7 @@ namespace trukmon.MVVM.ViewModel
     {
         public string MonsterName { get; set; }
         public string Health { get; set; }
+        public int Id { get; set; }
         public List<string> Moves { get; set; } = new List<string>();
     }
 }

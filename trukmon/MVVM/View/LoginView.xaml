@@ -10,17 +10,27 @@
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
             <StackPanel Margin="0,0,50,0">
                 <TextBlock Text="DATABASE" FontSize="50"/>
+                <TextBlock Text="Please configure first"/>
                 <TextBlock Text="Server Name"/>
                 <TextBox Text="{Binding ServerName, UpdateSourceTrigger=PropertyChanged}"></TextBox>
                 <Button Content="Link Database" Command="{Binding LinkRequest}" Margin="20"/>
             </StackPanel>
-            <StackPanel>
+            <StackPanel Margin="0,0,50,0">
                 <TextBlock Text="LOGIN" FontSize="50"></TextBlock>
                 <TextBlock Text="Username"/>
                 <TextBox Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"></TextBox>
                 <TextBlock Text="Password"/>
                 <TextBox Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}"></TextBox>
                 <Button Content="Login" Command="{Binding LoginRequest}" Margin="20"></Button>
+                <Button Content="Bypass" Command="{Binding BypassRequest}"></Button>
+            </StackPanel>
+            <StackPanel>
+                <TextBlock Text="REGISTER" FontSize="50"></TextBlock>
+                <TextBlock Text="Username"/>
+                <TextBox Text="{Binding RegUsername, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                <TextBlock Text="Password"/>
+                <TextBox Text="{Binding RegPassword, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                <Button Content="Register" Command="{Binding RegisterRequest}" Margin="20"></Button>
             </StackPanel>
         </StackPanel>
     </Border>

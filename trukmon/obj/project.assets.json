@@ -4793,23 +4793,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\IdeaPad\\.nuget\\packages\\": {},
+    "C:\\Users\\Lassalle\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\IdeaPad\\source\\repos\\trukmon\\trukmon\\trukmon.csproj",
+      "projectUniqueName": "C:\\Users\\Lassalle\\source\\repos\\trukmon\\trukmon\\trukmon.csproj",
       "projectName": "trukmon",
-      "projectPath": "C:\\Users\\IdeaPad\\source\\repos\\trukmon\\trukmon\\trukmon.csproj",
-      "packagesPath": "C:\\Users\\IdeaPad\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\IdeaPad\\source\\repos\\trukmon\\trukmon\\obj\\",
+      "projectPath": "C:\\Users\\Lassalle\\source\\repos\\trukmon\\trukmon\\trukmon.csproj",
+      "packagesPath": "C:\\Users\\Lassalle\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Lassalle\\source\\repos\\trukmon\\trukmon\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\IdeaPad\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Lassalle\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

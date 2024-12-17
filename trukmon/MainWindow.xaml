@@ -18,6 +18,9 @@
         <DataTemplate DataType="{x:Type VM:SelectPageVM}">
             <View:SelectPage/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type VM:FightPageVM}">
+            <View:FightPage/>
+        </DataTemplate>
     </Window.Resources>
     <Grid>
         <ContentControl Content="{Binding CurrentVM}"/>

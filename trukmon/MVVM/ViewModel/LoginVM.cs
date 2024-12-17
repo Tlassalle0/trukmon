@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -23,16 +24,19 @@ namespace trukmon.MVVM.ViewModel
         public ICommand LoginRequest { get; set; }
         public ICommand LinkRequest { get; set; }
 
-        private string _servName;
-        public string ServName
+        public ICommand RegisterRequest { get; set; }
+        public ICommand BypassRequest { get; set; }
+
+        private string _serverName;
+        public string ServerName
         {
-            get => _servName;
+            get => _serverName;
             set
             {
-                if (_servName != value)
+                if (_serverName != value)
                 {
-                    _servName = value;
-                    OnPropertyChanged(nameof(ServName));
+                    _serverName = value;
+                    OnPropertyChanged(nameof(ServerName));
                 }
             }
         }
@@ -65,6 +69,34 @@ namespace trukmon.MVVM.ViewModel
             }
         }
 
+        private string _regusername = "jean";
+        public string RegUsername
+        {
+            get => _regusername;
+            set
+            {
+                if (_regusername != value)
+                {
+                    _regusername = value;
+                    OnPropertyChanged(nameof(RegUsername));
+                }
+            }
+        }
+
+        private string _regpassword = "lassalle";
+        public string RegPassword
+        {
+            get => _regpassword;
+            set
+            {
+                if (_regpassword != value)
+                {
+                    _regpassword = value;
+                    OnPropertyChanged(nameof(RegPassword));
+                }
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected void OnPropertyChanged(string propertyName)
@@ -76,6 +108,8 @@ namespace trukmon.MVVM.ViewModel
             _dataContext = new ExerciceMonsterContext();
             LoginRequest = new RelayCommand(LoginAttempt);
             LinkRequest = new RelayCommand(LinkAttempt);
+            RegisterRequest = new RelayCommand(RegisterAttempt);
+            BypassRequest = new RelayCommand(Bypass);
             InitDB();
         }
 
@@ -89,7 +123,17 @@ namespace trukmon.MVVM.ViewModel
             //var options = new DbContextOptionsBuilder<ExerciceMonsterContext>().Options;
             //_dataContext = new ExerciceMonsterContext(_appSettings, options);
             //MessageBox.Show(_appSettings.ServerName);
-            MessageBox.Show("Not implemented");
+            string path = "../../../DB.txt";
+            if (File.Exists(path))
+            {
+                File.WriteAllText(path, ServerName);
+                InitDB();
+            }
+            else
+            {
+                MessageBox.Show("File not found");
+            }
+            _dataContext = new ExerciceMonsterContext();
         }
 
         private void Login(Player? player)
@@ -150,7 +194,6 @@ namespace trukmon.MVVM.ViewModel
                 {
                     if (item.PasswordHash.Equals(ComputeSHA256Hash(Password)))
                     {
-                        MessageBox.Show("Yeee");
                         var player = _dataContext.Players.FirstOrDefault(e => e.LoginId == item.Id);
                         if (player == null)
                         {
@@ -177,9 +220,8 @@ namespace trukmon.MVVM.ViewModel
         }
         public async void InitDB()
         {
-            using (var db = new ExerciceMonsterContext())
+            try
             {
-                db.Database.EnsureCreated();
                 var possiblePoyo = new ObservableCollection<Login>(
                 await _dataContext.Logins
                     .Where(e => e.Username == "poyo")
@@ -191,27 +233,78 @@ namespace trukmon.MVVM.ViewModel
                 }
                 else
                 {
-                    await db.Database.ExecuteSqlRawAsync("DELETE FROM PlayerMonster");
-                    await db.Database.ExecuteSqlRawAsync("DELETE FROM MonsterSpell");
+                    await _dataContext.Database.ExecuteSqlRawAsync("DELETE FROM PlayerMonster");
+                    await _dataContext.Database.ExecuteSqlRawAsync("DELETE FROM MonsterSpell");
 
-                    // Clear main tables
-                    db.Monsters.RemoveRange(db.Monsters);
-                    db.Spells.RemoveRange(db.Spells);
+                // Clear main tables
+                _dataContext.Monsters.RemoveRange(_dataContext.Monsters);
+                _dataContext.Spells.RemoveRange(_dataContext.Spells);
 
 
-                    db.Logins.Add(new Login()
+                _dataContext.Logins.Add(new Login()
                     {
                         Username = "poyo",
                         PasswordHash = ComputeSHA256Hash("poyo")
                     });
 
-                    await MonsterSet.InitMonsters(db);
-                    await SpellSet.InitSpells(db);
+                    await MonsterSet.InitMonsters(_dataContext);
+                    await SpellSet.InitSpells(_dataContext);
 
                     // Save changes to apply deletions
-                    await db.SaveChangesAsync();
+                    await _dataContext.SaveChangesAsync();
+                    
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while initializing the database: {ex.Message} Try updating the server name");
+            }
+        }
+        public async void RegisterAttempt()
+        {
+            if (_dataContext == null)
+            {
+                MessageBox.Show("_dataContext is null");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(RegUsername))
+            {
+                MessageBox.Show("Username is null or empty");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(RegPassword))
+            {
+                MessageBox.Show("Password is null or empty");
+                return;
+            }
+            var notUsed = new ObservableCollection<Login>(
+                await _dataContext.Logins
+                    .Where(e => e.Username == RegUsername)
+                    .ToListAsync()
+                    );
+            if (notUsed.Count > 0)
+            {
+                MessageBox.Show("Username already taken");
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Username available");
+                await _dataContext.Logins.AddAsync(new Login()
+                {
+                    Username = RegUsername,
+                    PasswordHash = ComputeSHA256Hash(RegPassword)
+                });
+            }
+
+            _dataContext.SaveChanges();
+        }
+
+        public void Bypass()
+        {
+            Login(null);
         }
     }
 }
