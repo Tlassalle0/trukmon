@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("trukmon")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+64fa4f3cab4453e2f92e5f848246d705d0932aa0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7cff63ccee92be1355c3bab044eb2a7017754e63")]
 [assembly: System.Reflection.AssemblyProductAttribute("trukmon")]
 [assembly: System.Reflection.AssemblyTitleAttribute("trukmon")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
